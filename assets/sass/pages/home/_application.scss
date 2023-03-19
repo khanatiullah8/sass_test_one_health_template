@@ -1,0 +1,38 @@
+.application {
+  &__wrapper {
+    width: 100%;
+    padding: 37px 24% 0;
+    gap: 78px;
+    @include flex-common;
+    background: url(../../../../assets/images/application_bg.png) no-repeat center;
+    background-size: cover;
+  }
+
+  &__figure {
+    @include box-shadow(0 0 3px $greyMid);
+    @include flex-shrink(0);
+  }
+
+  &__text { @include transform(translateY(-20px)); }
+
+  &__title {
+    margin-bottom: 9px;
+    color: $white;
+    text-shadow: 0 0 5px $greyMid;
+  }
+
+  &__links {
+    gap: 12px;
+    @include flex-common(center, flex-start);
+
+    li {
+      width: 138px;
+      cursor: pointer;
+    }
+
+    img {
+      border-radius: 3px;
+      @include box-shadow(0 0 3px $greyMid);
+    }
+  }
+}

@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  @include box-sizing;
+  padding: 0;
+  margin: 0;
+}
+
+html { scroll-behavior: smooth; }
+span { display: inline-block; }
+p::first-letter { text-transform: uppercase; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @include box-sizing;
+}
+
+input[type],
+button,
+select,
+textarea {
+  outline: none;
+}
+
+::placeholder {
+  font-size: 11px;
+  color: $greyLight;
+  text-transform: capitalize;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+  @include transition;
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.button {
+  padding: 6px 15px;
+  border-radius: 3px;
+  background-color: $greenLight;
+  color: $white;
+  font-size: 10px;
+  text-transform: capitalize;
+
+  &:hover { background-color: $greenDark; }
+}
+
+.section-title {
+  color: $greyDark;
+  font-size: 26px;
+  line-height: 1.4;
+
+  &::first-letter { text-transform: uppercase; }
+
+  span {
+    display: inline;
+    text-transform: capitalize;
+  }
+}
+
+.card-title {
+  color: $greyDark;
+  font-size: 14px;
+  line-height: 1;
+}
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1366px;
+  width: 60%; 
+  margin: 0 auto;
+}

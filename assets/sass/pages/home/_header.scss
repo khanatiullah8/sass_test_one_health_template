@@ -1,0 +1,197 @@
+.header {
+  &__top {
+    &--wrapper {
+      width: 100%;
+      padding: 0 20%;
+      border-bottom: 1px solid $greyLighter;
+      @include flex-common(center, space-between);
+    }
+
+    @at-root {
+      .header__contact {
+        @include flex-common;
+  
+        a {
+          padding: 0 14px;
+          color:$greyLight;
+          font-size: 9px;
+
+          &:hover { color: $greenLight; }
+
+          &::before {
+            margin-right: 5px;
+            color: $greenLight;
+            font-size: 13px;
+            vertical-align: middle;
+          }
+        }
+
+        li {
+          font-size: 0;
+
+          &:first-child {
+            a {
+              padding-left: 0;
+              border-right: 1px solid $greyLight;
+
+              &::before {
+                @include relative-icon(map-get($fontAwesome, phone));
+              }
+            }
+          }
+        }
+        li {
+          &:last-child {
+            a {
+              padding-left: 12px;
+
+              &::before {
+                font-size: 10px;
+                vertical-align: text-top;
+                @include relative-icon(map-get($fontAwesome, mail));
+              }
+            }
+          }
+        }
+      }
+      
+      .header__social {
+        gap: 5px;
+        @include flex-common;
+  
+        a {
+          width: 20px;
+          position: relative;
+          color: $greyLight;
+          font-size: 10px;
+          text-indent: -99999px;
+          @include transform(translateY(-3px));
+  
+          &:hover { color: $greenLight; }
+        }
+  
+        @include socialIcon($socialHeader);
+      }
+    }
+
+  }
+
+  &__bottom {
+    &--wrapper {
+      width: 100%;
+      padding: 10px 20% 12px;
+      @include flex-common(center, flex-start);
+    }
+
+  @at-root {
+
+    .header__logo {
+      @include flex-shrink(0);
+    }
+    .header__form {
+      border: 1px solid $greyLighter;
+      border-radius: 3px;
+      margin: 0 12.8% 0 12px;
+      @include display-flex;
+
+      input, button {
+        padding: 7px 10px;
+        border: none;
+        background-color: transparent;
+      }
+
+      button {
+        padding: 8px 14px;
+        border-right: 1px solid $greyLighter;
+        position: relative;
+        color: $greenLight;
+        font-size: 11px;
+        text-indent: -99999px;
+        @include transition;
+
+        &:hover { color: $greenDark; }
+
+        &::before {
+          @include fontAwesome(map-get($fontAwesome, search));
+        }
+      }
+
+      input {
+        width: 173px;
+
+        &::placeholder { color: $greyMid; }
+      }
+    }
+
+    .header__hamburger {  
+      width: 30px;
+      height: 30px;
+      display: none;
+      overflow: hidden;
+      position: relative;
+      z-index: 4;
+      cursor: pointer;
+        
+      &--bar {
+        width: 100%;
+        height: 4px;
+        border-radius: 4px;
+        background-color: $greenLight;
+        text-indent: -99999px;
+        @include position(absolute, top, 50%, left, 0);
+        @include transform(translateY(-50%));
+        @include transition;
+    
+        &::before,
+        &::after {
+          content: '';
+          width: inherit;
+          height: inherit;
+          border-radius: inherit;
+          position: absolute;
+          left: 0;
+          background-color: inherit;
+          @include transition;
+        }
+        
+        &::before { top: -13px; }
+        &::after { top: 13px; }
+      }
+  
+      &:hover {
+        .header__hamburger--bar {
+          @include transform(translateY(-50%) rotate(135deg));
+         
+          &::before { display: none; }
+          
+          &::after {
+            top: 0;
+            @include transform(rotate(-270deg));
+          }
+        }
+      } 
+    }
+
+    .header__nav {
+      &--menu {
+        @include flex-common;
+
+        a {
+          margin-right: 25px;
+          color: $greyLight;
+          font-size: 10px;
+          text-transform: capitalize;
+
+          &:hover { color: $greenLight; }
+        }
+
+        li {
+          &:first-child {
+            a{ color: $greenLight; }
+          }
+        }
+      }
+    }
+  }
+  }
+}

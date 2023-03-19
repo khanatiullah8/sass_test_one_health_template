@@ -1,0 +1,82 @@
+.news {
+  &__wrapper {
+    width: 100%;
+    padding: 57px 22.4% 58px;
+    background-color: $offWhite;
+    @include flex-common;
+    @include flex-direction(column);
+  }
+
+  &__title {
+    font-size: 28px;
+    text-transform: capitalize;
+  }
+
+  &__lists {
+    width: 100%;
+    margin: 40px 0 25px;
+    @include flex-common(flex-start, space-between);
+
+    li {
+      border-radius: 5px;
+      position: relative;
+      @include box-shadow(0 0 3px $greyLight);
+      @include flex-basis(25.5%);
+    }
+
+    a {
+      color: $black;
+
+      &:hover { color: $greenLight; }
+    }
+
+    &--text {
+      padding: 9px 12px 8px;
+    }
+
+    &--title {
+      margin-bottom: 5px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    &--tag {
+      padding: 3px 5px;
+      border-radius: 10px;
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      background-color: $purple;
+      color: $white;
+      font-size: 9px;
+      text-transform: capitalize;
+    }
+  }
+
+  &__source {
+    @include flex-common(center, flex-start);
+
+    span {
+      color: $greyMid;
+      font-size: 8px;
+    }
+
+    img { border-radius: 50%; }
+
+    &--name {
+      margin: 0 7px 0 4px;
+      text-transform: capitalize;
+    }
+
+    &--time {
+      &::before {
+        margin-right: 5px;
+        @include relative-icon(map-get($fontAwesome, clock));
+      }
+    }
+  }
+
+  &__readMore--button {
+    padding: 8px 21px;
+  }
+}

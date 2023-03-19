@@ -1,0 +1,56 @@
+// ===== Colors ===== //
+$black: #000;
+$white: #fff;
+$offWhite: #F5F9F6;
+$greenLight: #3ED9A5;
+$greenDark: #27ae60;
+$purple: #4E59FE;
+$greyLight: #A1AAA7;
+$greyLighter: #ddd;
+$greyMid: #555;
+$greyDark: #2E3B38;
+$greyDarker: #26312F;
+
+// ===== FontAwesome ===== //
+$fontAwesome : (
+  phone: \f095,
+  mail: \f0e0,
+  search: \f002,
+  left: \f060,
+  right: \f061,
+  clock: \f017,
+  calendar: \f133,
+  up: \f106,
+);
+
+// ===== socialHeader ===== //
+$socialHeader : (
+  1: \f09a, //facebook 
+  2: \f099, //twitter
+  3: \f17d, //dribbble
+  4: \f16d, //instagram
+  );
+  
+// ===== socialFooter ===== //
+$socialFooter : (
+  1: \f09a, //facebook
+  2: \f099, //twitter
+  3: \f0d5, //google
+  4: \f16d, //instagram
+  5: \f08c, //linkedin
+);
+
+// ===== Breakpoints ===== //
+$breakpoints: (
+  bigDevice: 1920px,
+  mac: 1440px,
+  pc: 1280px,
+  mdPc: 1150px,
+  ipadLandscape: 1024px,
+  ipad: 995px,
+  miniIpad: 767px,
+  phone: 640px,
+  iphone: 480px,
+  iphoneSm: 375px,
+  iphoneSe: 320px,
+);

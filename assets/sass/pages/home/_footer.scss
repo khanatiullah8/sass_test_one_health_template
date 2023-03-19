@@ -1,0 +1,106 @@
+.footer {
+  &__wrapper {
+    width: 100%;
+    padding: 48px 20% 13px;
+    background-color: $greyDark;
+  }
+  
+  &__top {
+    padding: 24px 0;
+    border-bottom: 2px solid $greyMid;
+    @include display-flex;
+    
+    .card-title {
+      margin-bottom: 18px;
+      color: $white;
+      font-size: 13px;
+
+      &::first-letter { text-transform: uppercase; }
+    }
+
+    > div {
+      padding: 0 11px;
+      @include flex-basis(25%);
+    }
+
+    ul {
+      @include display-flex;
+      gap: 2px;
+      @include flex-direction(column);
+    }
+
+    a {
+      color: $greyLight;
+      font-size: 11px;
+      text-transform: capitalize;
+
+      &:hover { color: $greenLight; }
+    }
+
+    .footer__social {
+      gap: 2px;
+      @include flex-common(flex-start, flex-start);
+      @include flex-direction(row);
+  
+      a {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        position: relative;
+        background-color: $greyDarker;
+        color: $white;
+        font-size: 14px;
+        text-indent: -99999px;
+  
+        &:hover { color: $greenLight; }
+      }
+  
+      @include socialIcon($socialFooter);
+    }
+  }
+
+  &__social--title {
+    margin: 25px 0 3px;
+    text-transform: capitalize;
+  }
+
+  &__copy {
+    padding: 10px 0;
+    color: $white;
+    font-size: 11px;
+
+    a {
+      color: $greenLight;
+
+      &:hover { text-decoration: underline; }
+    }
+
+    span {
+      &:first-of-type::first-letter { text-transform: uppercase; }
+      &:last-of-type::first-letter { text-transform: uppercase; }
+    }
+  }
+
+  &__move--top {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 3;
+    text-indent: -99999px;
+    right: 18px;
+    bottom: 15px;
+    background-color: $greyLight;
+    color: $greyMid;
+    cursor: pointer;
+    font-size: 20px;
+    @include transition;
+
+    &:hover { background-color: $greenLight; }
+
+    &::before {
+      @include fontAwesome(map-get($fontAwesome, up));
+      top: 45%;
+    }
+  }
+}

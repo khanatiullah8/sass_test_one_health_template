@@ -1,0 +1,84 @@
+.doctors {
+  &__wrapper {
+    width: 100%;
+    padding: 58px 23.5% 68px;
+    @include flex-common;
+    @include flex-direction(column);
+  }
+
+  &__title { text-transform: capitalize; }
+
+  &__lists {
+    width: 100%;
+    margin: 45px 0 28px;
+    text-transform: capitalize;
+    @include flex-common(flex-start, space-between);
+
+    li {
+      border-radius: 5px;
+      overflow: hidden;
+      @include flex-shrink(0);
+      @include box-shadow(0 0 3px $greyLight);
+    }
+
+    figure {
+      overflow: hidden;
+
+      img {
+        @include transition;
+
+        &:hover {
+          @include transform(scale(1.1));
+        }
+      }
+    }
+
+    &--text {
+      padding: 14px 14px 8px;
+
+      span {
+        color: $greyLight;
+        font-size: 10px;
+      }
+    }
+  }
+
+  &__controls {
+    border-radius: 15px;
+    overflow: hidden;
+    @include display-flex;
+    
+    > * {
+      width: 28px;
+      height: 27px;
+      position: relative;
+      background-color: $greenLight;
+      color: $white;
+      cursor: pointer;
+      font-size: 10px;
+      text-indent: -99999px;
+      @include transition;
+
+      &:hover {
+        background-color: $greenDark;
+      }
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-family: "fontAwesome";
+        text-indent: 0;
+        @include transform(translate(-50%, -50%));
+      }
+
+      &:first-child::before {
+        content: '#{map-get($fontAwesome, left)}';
+      }
+
+      &:last-child::before {
+        content: '#{map-get($fontAwesome, right)}';
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.welcome {
+  &__wrapper {
+    width: 100%;
+    padding: 125px 20% 0;
+    background-color: $offWhite;
+    gap: 85px;
+    @include display-flex;
+  }
+
+  &__text {
+    @include flex-common(flex-start, center);
+    @include flex-direction(column);
+    @include flex-basis(48%);
+  }
+
+  &__para {
+    margin: 1px 0 16px;
+    color: $greyMid;
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  &__learnMore--button { padding: 7px 20px; }
+
+  &__figure { @include flex-shrink(0); }
+}

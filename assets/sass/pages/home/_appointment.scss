@@ -1,0 +1,66 @@
+.appointment {
+  &__wrapper {
+    width: 100%;
+    padding: 58px 31% 59px;
+    @include flex-common;
+    @include flex-direction(column);
+  }
+
+  &__title {
+    font-size: 25px;
+    word-spacing: 2px;
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: 40px;
+    gap: 12px;
+    @include flex-common(center, space-between);
+    @include flex-wrap(wrap);
+
+    &--group {
+      @include flex-basis(48%);
+
+      * {
+        width: 100%;
+        padding: 9px 10px;
+        border: 1px solid $greyLighter;
+        border-radius: 3px;
+        color: $black;
+      }
+    }
+
+    &--number,
+    &--textarea,
+    &--control {
+      @include flex(1, 0, 100%);
+    }
+
+    select {
+        background-color: transparent;
+        font-size: 11px;
+        text-transform: capitalize;
+    }
+
+    input[type="date"] { font-size: 11px; }
+
+    &--textarea {
+      height: 119px;
+
+      textarea {
+        height: 100%;
+        resize: vertical;
+      }
+    }
+
+    &--control {
+      margin-top: 4px;
+
+      input {
+        padding: 9px 18px 8px;
+        border: none;
+        font-size: 12px;
+      }
+    }
+  }
+}

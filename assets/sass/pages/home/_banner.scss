@@ -1,0 +1,65 @@
+.banner {
+  &__wrapper {
+    width: 100%;
+    position: relative;
+    @include flex-common;
+  }
+
+  &__text {
+    position: absolute;
+    color: $white;
+    text-align: center;
+  }
+
+  &__para {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    word-spacing: 3px;
+  }
+
+  &__heading {
+    margin: 2px 0 12px 0;
+    font-size: 37px;
+    text-transform: capitalize;
+    @include transform(translateY(-5px))
+  }
+
+  &__consult--button {
+    padding: 8px 21px;
+  }
+
+  &__links {
+    width: 60%;
+    position: absolute;
+    bottom: -52px;
+    gap: 10.8%;
+    @include flex-common(center, flex-start);
+
+    li {
+      padding: 14px;
+      border-radius: 3px;
+      background-color: $white;
+      gap: 24px;
+      @include flex-common;
+      @include box-shadow(0 0 5px $greyLight);
+      @include flex-basis(23.4%);
+
+      &:not(:first-child) { text-transform: capitalize; }
+    }
+
+    figure {
+      border-radius: 50%;
+      overflow: hidden;
+      @include flex-shrink(0);
+    }
+
+    a {
+      color: $greyDark;
+      font-size: 13px;
+      line-height: 1.3;
+
+      &:hover { color: $greenLight; }
+    }
+  } 
+}
